@@ -1,42 +1,33 @@
 {
   "name": "system-prompts-extractor",
   "version": "1.0.0",
-  "description": "CLI tool that extracts & reverse-engineers system prompts from popular AI chatbots (ChatGPT, Claude, Gemini, Copilot)",
+  "description": "Extract and reverse-engineer system prompts from ChatGPT, Claude, Gemini, Copilot using network inspection and pattern detection",
   "main": "dist/index.js",
-  "type": "module",
   "bin": {
-    "prompts-extract": "dist/cli.js"
+    "spe": "dist/cli.js"
   },
   "scripts": {
-    "dev": "tsx src/cli.ts",
     "build": "tsc",
-    "start": "node dist/cli.js",
-    "test": "vitest",
-    "prepack": "npm run build"
+    "dev": "tsc --watch",
+    "test": "node dist/test.js",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "ai",
-    "prompts",
     "system-prompts",
-    "reverse-engineering",
+    "ai",
+    "extraction",
+    "security",
+    "research",
     "chatgpt",
     "claude",
     "gemini",
-    "copilot",
-    "cli"
+    "copilot"
   ],
   "author": "Arephan",
   "license": "MIT",
-  "dependencies": {
-    "chalk": "^5.3.0",
-    "cli-table3": "^0.6.3",
-    "ora": "^8.1.0",
-    "playwright": "^1.40.0"
-  },
   "devDependencies": {
-    "@types/node": "^20.10.0",
     "typescript": "^5.3.3",
-    "tsx": "^4.7.0",
-    "vitest": "^1.1.0"
-  }
+    "@types/node": "^20.10.5"
+  },
+  "dependencies": {}
 }
